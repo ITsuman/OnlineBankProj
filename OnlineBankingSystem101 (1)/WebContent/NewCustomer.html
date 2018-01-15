@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Global Bank</title>
+<style type="text/css">
+#c{
+background-color: #d3e4ff;
+}
+.nav{
+background-color: #c0cee5;
+color: black;
+text align:center;
+padding: 20px 0 20px 0;
+}
+.nav >li{
+display: inline-block;
+padding:0 25px 0 25px; 
+}
+.nav > li > a{
+text-decoration: none;
+color: #ffffff;
+}
+.nav > li >a:hover{
+color: silver;
+}
+
+
+
+
+
+</style>
+
+<script type="text/javascript">
+	function validate() {
+		var name=document.frm.c_name;
+		var e=document.frm.e_name;
+		var pass=document.frm.p_name;
+		var cpass=document.frm.p_name1;
+		var phone=document.frm.ph_name;
+		var address=document.frm.a_name;
+		if(name.value==""){
+			alert("Give a name");
+			return false;
+		}
+		if(e.value==""){
+			alert("Give an E-mail id");
+			return false;
+		}
+		if(pass.value==""){
+			alert("Enter Password");
+			return false;
+		}
+		if(pass.value.length<'8'){
+			alert("password is short");
+			return false;
+		}
+		if(pass.value!=cpass.value){
+			alert("Password Does not Match");
+			return false;
+		}
+		if(phone.value.length!='10'){
+			alert("phone number should be 10 digits");
+			return false;
+		}
+		if(isNaN(phone.value)){
+			alert("Enter correct Number");
+			return false;
+		}
+		if(address.value==""){
+			alert("Enter Address");
+			return false;
+		}
+	}
+
+
+
+
+
+
+
+
+</script>
+</head>
+<body id="c">
+<table  width="100%" height="50%" >
+<tr><th height="50" width="50%" align="left" ><b><Font color="navy" ><font size="5"><img alt="" src="eb8.png" height="80px" width="160px"><i>...With us,You're sure</i></Font></b></th>
+<th align="right" ><font color="navy" size="4px">Call Us At : 1800 3500 7896 <br><a href="Adminlogin.html">ADMIN</a></font></th>
+</tr>
+</table>
+
+<ul class="nav">
+<li><a href="Home.jsp">Home</a></li>
+<li><a href="NewCustomer.html">Create Account</a></li>
+<li><a href="C_log.jsp">Login</a>
+<li><a href="#">Contact</a>
+</ul>
+<form action="NewAccount" method="post" name="frm" onsubmit="return validate()">
+<table align="center">
+<tr>
+<th colspan="2">Open Account</th>
+</tr>
+<tr>
+<td>Name</td>
+<td><input type="text" name="c_name" style="border-radius:5px;margin-left: 10px"></td>
+</tr>
+<tr>
+<td>E-mail</td>
+<td><input type="email" name="e_name" style="border-radius:5px;margin-left: 10px"></td>
+</tr>
+<tr>
+<td>Password</td>
+<td><input type="password" name="p_name" style="border-radius:5px;margin-left: 10px"></td>
+</tr>
+<tr>
+<td>Confirm Password</td>
+<td><input type="password" name="p_name1" style="border-radius:5px;margin-left: 10px"></td>
+</tr>
+<tr>
+<td>Phone No.</td>
+<td><input type="text" name="ph_name" style="border-radius:5px;margin-left: 10px"></td>
+</tr>
+
+<tr>
+<td>Address</td>
+<td><input type="text" name="a_name" style="border-radius:5px;margin-left: 10px"></td>
+</tr>
+<tr><td colspan="2" align="right"><input type="submit" value="Submit"></td>
+</tr>
+</table>
+</form>
+</body>
+</html>
